@@ -221,20 +221,88 @@ client.on('message', message => {
 
 
 
-var prefix = "-" //هنا البرفكس حقك
+client.on('message', async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
 
-if (message.content === ( prefix + 'clear')) {
+  let args = message.content.split(" ");
+  let command = args[0];
 
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("❎ لا تمتلك صلاحية تعديل الرسائل.");
+  if(message.content.startsWith(prefix + "clear")) {
+    if(!message.member.hasPermission("MANAGEP_MESSAGES")) return message.reply('**انت لا تملك الخصائص الكافية.**').then(msg => {
+      msg.delete(3500);
+      message.delete(3500);
+    });
 
-  if(!args[0]) return message.channel.send("لا");
+    if(!args[1]) {
+      var stop = true;
+      var msg = parseInt(100);
 
-  message.channel.bulkDelete(args[0]).then(() => {
-
-  message.channel.send(`Clear ${args[0]} messages.`).then(msg => msg.delete(2000));
+      stop = false;
+      setTimeout(() => {
+        stop = true;
+      },3005);
+      setInterval(() => {
+        if(stop === true) return;
+        message.channel.fetchMessages({
+          limit: msg
+        }).then(m => {
+          message.channel.bulkDelete(msg).then(() => {
+            message.channel.send(`${message.author},\n\`\`\`تم مسح الرسائل بنجاح\`\`\``).then(msg => {
+              msg.delete(3000);
+            });
+          });
+        });
+      },1000);
+    } else if(args[1]) {
+      if(args[1] <= 100) {
+          message.channel.fetchMessages({
+              limit: msg
+          }).then(m => {
+              message.channel.bulkDelete(m).then(() => {
+                  message.channel.send(`${message.author},\n\`\`\`تم مسح الرسائل بنجاح\`\`\``).then(msg => {
+              msg.delete(3000);
+                  });
+              });
+          });
+      } else if(args[1] <= 200) {
+        stop = true;
+        setTimeout(() => {
+          stop = false;
+        },2001);
+        setInterval(() => {
+          if(stop === true) return;
+          message.channel.fetchMessages({
+            limit: msg
+          }).then(m => {
+            message.channel.bulkDelete(m).then(() => {
+                message.channel.send(`${message.author},\n\`\`\`تم مسح الرسائل بنجاح\`\`\``).then(msg => {
+              msg.delete(3000);
+                  });
+            });
+          });
+        },1000);
+      } else if(args[1] <= 300) {
+        stop = true;
+        setTimeout(() => {
+          stop = false;
+        },2001);
+        setInterval(() => {
+          if(stop === true) return;
+          message.channel.fetchMessages({
+            limit: msg
+          }).then(m => {
+            message.channel.bulkDelete(m).then(() => {
+            message.channel.send(`${message.author},\n\`\`\`تم مسح الرسائل بنجاح\`\`\``).then(msg => {
+              msg.delete(3000);
+                  });
+            });
+          });
+        });
+      }
+    }
+  }
 });
-
-}// By LORD14GAMER#3332
 
 
 
