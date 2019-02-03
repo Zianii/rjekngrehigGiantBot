@@ -1780,8 +1780,7 @@ var embed  = new Discord.RichEmbed()
 .addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
 .setColor('#000000')
 message.channel.sendEmbed(embed)
-
-} /////// Galal ///////// Mal ,  Codes
+}
 });
 
 
