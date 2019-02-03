@@ -1862,59 +1862,6 @@ message.channel.sendEmbed(embed)
 } /////// Galal ///////// Mal ,  Codes
 });
 
-client.on('guildCreate', guild => {
-   
-  client.users.get("283580465862934539")
-    const MAL&OTOZX = new Discord.RichEmbed()
-    .setAuthor(`بوتك دخل سيرفر جديد مبروك ✅`)
-    .setDescription(`**
-  Server name: __${guild.name}__
-  Server id: __${guild.id}__
-  Server owner: __${guild.owner}__
-  Member Count: __${guild.memberCount}__
-  Servers Counter : __${client.guilds.size}__**`)/// Mal , Codes //// OTOZX
-          .setColor('#36393e')
-          .setFooter('mal' , client.user.avatarURL)
-         client.users.get("283580465862934539").send({MAL&OTOZX});
-})
- 
-client.on('guildDelete', guild => {
-   
-  client.users.get("283580465862934539")
- 
-  const MAL&OTOZX = new Discord.RichEmbed()
-  .setAuthor(`بوتك خرج من سيرفر للاسف ❎`)
-  .setDescription(`**
- Server name: __${guild.name}__
- Server id: __${guild.id}__
- Server owner: __${guild.owner}__
- Members Count: __${guild.memberCount}__
- Servers Counter : __${client.guilds.size}__**`)
-         .setColor('#36393e')
-         .setFooter('mal' , client.user.avatarURL)
-         client.users.get("283580465862934539").send({MAL&OTOZX});
- 
-});
-
-client.on('message', message => {
-  if (message.content.startsWith("رابط")) {
-
-message.channel.createInvite({
-      thing: true,
-      maxUses: 100,
-      maxAge: 86400
-  }).then(invite =>
-    message.author.sendMessage(invite.url)
-  )
-message.channel.send("**تم ارسال الرابط برسالة خاصة**")
-
-message.author.send(`**مدة الرابط : يـوم
-عدد استخدامات الرابط : 100**`)
-
-
-  }
-});
-
 
 
 
