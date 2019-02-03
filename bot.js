@@ -187,38 +187,6 @@ member.addRole(KinG66S[member.user.id].roles.shift());//! KinG66S.❤#0045
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
-
-  message.channel.createInvite({
-        thing: true,
-        maxUses: 100,
-        maxAge: 86400
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(" ✅    تم ارسال الرابط على الخاص  ")
-      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-              const Embed11 = new Discord.RichEmbed()
-        .setColor("RANDOM")
-                .setAuthor(message.guild.name, message.guild.iconURL)
-        .setDescription(`
-**
--${message.guild.name}  Link
-**`)
-      message.author.sendEmbed(Embed11)
-    }
-});
-
-
-
-
-
-
-
-
 
 client.on('message', async message => {
   if(message.author.bot) return;
@@ -305,11 +273,6 @@ client.on('message', async message => {
 
 
 
-
-
-
-
-
 client.on('message' , message => {
   var prefix = "-";
   if(message.author.bot) return;
@@ -346,46 +309,6 @@ suggestchannel.send("@everyone  `||` @here ");
     return;
 }
 });
-
-
-
-client.on('message' , message => {
-  var prefix = "XMAS";
-  if(message.author.bot) return;
-  if(message.content.startsWith(prefix + "send")) {
-    let args = message.content.split(" ").slice(1);
-
-
-    let suggestmessage = args.join(" ").slice(22);
-    let suggestchannel = message.mentions.channels.first();
-
-    if (!suggestchannel) {
-        return message.reply("Please Mention the channel!")
-    }
-
-    if (!suggestmessage) {
-        return message.reply("Plase Give Text To send Channel!")
-    
-         
-    }
-     message.delete();
-suggestchannel.send("");
-    let embed = new Discord.RichEmbed()
-        .addField("**message**", `${suggestmessage}`)
-        .setTimestamp()
-    suggestchannel.send({
-        embed
-    }).then(msg => {
-        msg.react("✅").then(r => msg.react("❎"))
-    });
-
-
-    message.reply(`Your message is sended.`).then(msg => msg.delete(1000));
-    return;
-}
-});
-
-
 
 
 
