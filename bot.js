@@ -1861,7 +1861,7 @@ client.on('message' , message => {
 
 
 
-	    
+//Bot By !                    AbdallahZ ツ#2899	    
 	    
 	    
 	    
