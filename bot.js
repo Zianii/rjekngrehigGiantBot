@@ -1073,7 +1073,6 @@ member.addRole(role)
 });
 
 
-var prefix = "-";
 
 client.on("message", message => {
 
