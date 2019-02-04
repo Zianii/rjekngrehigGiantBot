@@ -11,7 +11,7 @@ client.on('message', msg => {
   }
 });
 
-var prefix = "*";
+var prefix = "-";
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`*help | WebSoon  `,"Watching")
@@ -41,7 +41,7 @@ client.user.setGame(`*help | WebSoon  `,"Watching")
 
 
 const aprefix = "-";
-const dev = ['283580465862934539','444918581659172864'];
+const dev = ['283580465862934539','283580465862934539'];
 client.on('message', message => {
     var arg = message.content.split(` `).slice(1).join(' ');
       if (!dev.includes(message.author.id)) return;
