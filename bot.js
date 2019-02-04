@@ -1524,7 +1524,7 @@ msg.reply('اهلين منور حبي ')
 
 
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'general');
+    let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
     let embed = new Discord.RichEmbed()
@@ -1555,7 +1555,7 @@ client.on('guildMemberAdd', member => {
         .setColor('RED')
         .setFooter(`==== نــتــمــنــآ لــكــم آســتــمـــتــآع ====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
     
-    var channel =member.guild.channels.find('name', 'general')
+    var channel =member.guild.channels.find('name', 'bye')
     if (!channel) return;
     channel.send({embed : embed});
     })
@@ -1575,7 +1575,7 @@ client.on('guildMemberAdd', member => {
 
     client.on('message', message => {
         if(message.content.includes('https://')){
-                                                if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+                                                if(!message.channel.guild) return message.reply('** هل تراسلني في الخاص؟ 🤔   **');
             if (!message.member.hasPermissions(['ADMINISTRATOR'])){
             message.delete()
         return message.reply(`** No Links :angry: !**`)
@@ -1611,7 +1611,17 @@ client.on('message', message => {
             if(!message.channel.guild) return;
         let embed = new Discord.RichEmbed()
         .setTitle(`:small_orange_diamond: Click Here To Invite Fantastic. `)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
+        .setURL(`https://btc4link.com/ybwbYk4`)
+     message.channel.sendEmbed(embed);
+       }
+   });
+
+client.on('message', message => {
+        if (message.content === prefix + "support") {
+            if(!message.channel.guild) return;
+        let embed = new Discord.RichEmbed()
+        .setTitle(`:small_orange_diamond: Click Here To Invite Fantastic. `)
+        .setURL(`https://discord.io/GiantBot`)
      message.channel.sendEmbed(embed);
        }
    });
