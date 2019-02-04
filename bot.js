@@ -1610,7 +1610,7 @@ client.on('message', message => {
         if (message.content === prefix + "inv") {
             if(!message.channel.guild) return;
         let embed = new Discord.RichEmbed()
-        .setTitle(`:small_orange_diamond: Click Here To Invite Fantastic. `)
+        .setTitle(`:small_orange_diamond: Click Here To Invite GiantBot To Your Server. `)
         .setURL(`https://btc4link.com/ybwbYk4`)
      message.channel.sendEmbed(embed);
        }
@@ -1620,7 +1620,7 @@ client.on('message', message => {
         if (message.content === prefix + "support") {
             if(!message.channel.guild) return;
         let embed = new Discord.RichEmbed()
-        .setTitle(`:small_orange_diamond: Click Here To Invite Fantastic. `)
+        .setTitle(`:small_orange_diamond: Click Here To Join GiantBot Support Server. `)
         .setURL(`https://discord.io/GiantBot`)
      message.channel.sendEmbed(embed);
        }
